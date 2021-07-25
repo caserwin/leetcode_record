@@ -96,9 +96,7 @@ public class Code2 {
                 curNode.next = new ListNode(val);
                 l2 = l2.next;
                 curNode = curNode.next;
-                continue;
             }
-
         }
 
         if (next == 1){

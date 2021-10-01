@@ -12,5 +12,4 @@ public class StringToArrayDemo {
         List<String> ls = Arrays.asList(s.split(""));
         System.out.println(ls);
     }
-
 }

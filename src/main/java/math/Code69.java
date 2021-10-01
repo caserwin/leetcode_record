@@ -1,4 +1,4 @@
-package shuxuejisuan;
+package math;
 
 /**
  * User: caserwin

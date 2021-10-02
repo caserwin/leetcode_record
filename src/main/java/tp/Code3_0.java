@@ -1,3 +1,5 @@
+package tp;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -7,7 +9,7 @@ import java.util.HashSet;
  * Date: 2021-07-25 11:56
  * Description:
  */
-public class Code3 {
+public class Code3_0 {
 
 
     public static void main(String[] args) {
@@ -32,7 +34,7 @@ public class Code3 {
         int left = 0;
 
         while (left < cs.length) {
-            set = new HashSet<String>();
+            set = new HashSet<>();
             int right = left;
             while (right < cs.length) {
                 if (!set.contains(String.valueOf(cs[right]))) {

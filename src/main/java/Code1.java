@@ -21,7 +21,7 @@ public class Code1 {
     }
 
     public static int[] twoSum(int[] nums, int target) {
-        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+        HashMap<Integer, Integer> map = new HashMap<>();
         int index = 0;
         for (int num : nums) {
             map.put(index, num);

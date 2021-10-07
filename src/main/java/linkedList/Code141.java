@@ -1,3 +1,5 @@
+package linkedList;
+
 /**
  * User: caserwin
  * Date: 2021/7/26 5:01 下午

@@ -1,3 +1,5 @@
+package array;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -9,10 +11,9 @@ import java.util.List;
  */
 public class Code448 {
 
-    public static void main(String[] args) {
-
-    }
-
+    /**
+     * 借用桶排序的方式实现
+     */
     public List<Integer> findDisappearedNumbers(int[] nums) {
         int n = nums.length;
         List<Integer> list = new ArrayList<>();

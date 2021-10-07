@@ -1,3 +1,5 @@
+package tree;
+
 /**
  * User: caserwin
  * Date: 2021/7/26 4:56 下午
@@ -28,6 +30,11 @@ public class Code101 {
         return isMirror(root.left, root.right);
     }
 
+    /**
+     * 核心：
+     * 1. t1.right 和 t2.left 判断
+     * 2. t1.left 和 t2.right 判断
+     */
     private static boolean isMirror(TreeNode t1, TreeNode t2) {
         if (t1 == null && t2 == null) {
             return true;

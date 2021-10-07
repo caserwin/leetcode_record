@@ -8,13 +8,15 @@ package array;
  */
 public class Code88 {
     public static void main(String[] args) {
-//        int[] nums1 = {1, 2, 3, 0, 0, 0};
-//        int[] nums2 = {2, 5, 6};
+        int[] nums1 = {1, 2, 3, 0, 0, 0};
+        int[] nums2 = {2, 5, 6};
 
-        int[] nums1 = {1};
-        int[] nums2 = {};
+//        int[] nums1 = {1};
+//        int[] nums2 = {};
 
-        new Code88().merge(nums1, 1, nums2, 0);
+//        new Code88().merge(nums1, 1, nums2, 0);
+
+        new Code88().merge(nums1, 3, nums2, 3);
 
         for (int num1 : nums1) {
             System.out.println(num1);
@@ -42,6 +44,7 @@ public class Code88 {
             }
         }
 
+        // 数组拷贝，因为 merge 返回的是 void，本质上是把 nums2 合并到 nums1 上了。
         System.arraycopy(sortArr, 0, nums1, 0, sortArr.length);
     }
 }

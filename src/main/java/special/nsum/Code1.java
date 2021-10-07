@@ -1,5 +1,6 @@
-import java.util.HashMap;
-import java.util.Map;
+package special.nsum;
+
+import java.util.*;
 
 /**
  * User: caserwin
@@ -13,13 +14,15 @@ public class Code1 {
         int[] nums = {3, 3};
         int target = 6;
 
-
-        int[] res = twoSum(nums, target);
+        int[] res = twoSum1(nums, target);
         for (int num : res) {
             System.out.println(num);
         }
     }
 
+    /**
+     * 方法一： HashMap
+     */
     public static int[] twoSum(int[] nums, int target) {
         HashMap<Integer, Integer> map = new HashMap<>();
         int index = 0;
@@ -43,5 +46,40 @@ public class Code1 {
         }
 
         return new int[]{a, b};
+    }
+
+    /**
+     * 方法二： 排序后双指针
+     */
+    public static int[] twoSum1(int[] nums, int target) {
+        Integer[] newArray = new Integer[nums.length];
+        for (int i = 0; i < nums.length; i++) {
+            newArray[i] = nums[i];
+        }
+        Arrays.sort(newArray, Comparator.naturalOrder());
+
+        int left = 0;
+        int right = newArray.length - 1;
+        while (left < right) {
+            if (newArray[right] > target) {
+                right--;
+                continue;
+            }
+
+            if (newArray[left] + newArray[right] > target) {
+                right--;
+                continue;
+            }
+
+            if (newArray[left] + newArray[right] < target) {
+                left++;
+                continue;
+            }
+
+            if (newArray[left] + newArray[right] == target) {
+                break;
+            }
+        }
+        return new int[]{left, right};
     }
 }

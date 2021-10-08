@@ -6,22 +6,33 @@ package linkedList;
  * Description: 反转链表
  */
 public class Code206 {
+//    public static ListNode reverseList(ListNode node) {
+//        if (node == null || node.next == null) {
+//            return node;
+//        }
+//
+//        ListNode cur = node;
+//        ListNode next = cur.next;
+//        cur.next = null;
+//
+//        while (next != null) {
+//            ListNode tmp = next.next;
+//            next.next = cur;
+//
+//            cur = next;
+//            next = tmp;
+//        }
+//        return cur;
+//    }
+
     public static ListNode reverseList(ListNode node) {
-        if (node == null || node.next == null) {
-            return node;
-        }
-
-        ListNode cur = node;
-        ListNode next = cur.next;
-        cur.next = null;
-
-        while (next != null) {
-            ListNode tmp = next.next;
-            next.next = cur;
-
+        ListNode pre = null, cur = node;
+        while (cur != null) {
+            ListNode next = cur.next;
+            cur.next = pre;
+            pre = cur;
             cur = next;
-            next = tmp;
         }
-        return cur;
+        return pre;
     }
 }

@@ -6,16 +6,6 @@ package linkedList;
  * Description:
  */
 public class Code21 {
-
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
-
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode resNode = new ListNode(0);
         // TODO 记住这里是：ListNode curNode = resNode ，而非 ListNode curNode = resNode.next

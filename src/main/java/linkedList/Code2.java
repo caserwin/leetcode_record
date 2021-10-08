@@ -6,15 +6,6 @@ package linkedList;
  * Description:
  */
 public class Code2 {
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
-
     public static void main(String[] args) {
 
 //        ListNode listNode1 = new ListNode(2);
@@ -43,7 +34,7 @@ public class Code2 {
 
         ListNode resNode = addTwoNumbers(listNode1, listNode3);
 
-        while (resNode != null){
+        while (resNode != null) {
             System.out.println(resNode.val);
             resNode = resNode.next;
         }
@@ -56,7 +47,7 @@ public class Code2 {
         ListNode curNode = resNode;
 
         int next = 0;
-        int val ;
+        int val;
         while (l1 != null || l2 != null) {
             if (l1 != null && l2 != null) {
                 val = l1.val + l2.val + next;
@@ -73,7 +64,7 @@ public class Code2 {
                 continue;
             }
 
-            if (l1 != null && l2 == null) {
+            if (l1 != null) {
                 val = l1.val + next;
                 next = 0;
                 if (val >= 10) {
@@ -87,7 +78,7 @@ public class Code2 {
                 continue;
             }
 
-            if (l1 == null && l2 != null) {
+            if (l2 != null) {
                 val = l2.val + next;
                 next = 0;
                 if (val >= 10) {
@@ -101,7 +92,7 @@ public class Code2 {
             }
         }
 
-        if (next == 1){
+        if (next == 1) {
             curNode.next = new ListNode(1);
         }
 

@@ -9,17 +9,6 @@ import java.util.Set;
  * Description:
  */
 public class Code160 {
-
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-            next = null;
-        }
-    }
-
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         Set<ListNode> set = new HashSet<>();
         ListNode temp = headA;

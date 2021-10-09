@@ -14,11 +14,11 @@ public class Code121 {
 
     public static int maxProfit(int[] prices) {
         int maxProfit = 0;
-        int minPrice = Integer.MAX_VALUE;
+        int tmpMin = Integer.MAX_VALUE;
 
         for (int price : prices) {
-            minPrice = Math.min(minPrice, price);
-            maxProfit = Math.max(maxProfit, (price - minPrice));
+            tmpMin = Math.min(tmpMin, price);
+            maxProfit = Math.max(maxProfit, price - tmpMin);
         }
         return maxProfit;
     }

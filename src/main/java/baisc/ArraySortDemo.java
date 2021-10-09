@@ -16,5 +16,12 @@ public class ArraySortDemo {
         System.out.println(Arrays.toString(a));
         Arrays.sort(a, Comparator.reverseOrder());
         System.out.println(Arrays.toString(a));
+
+        int[] a1 = new int[3];
+        a1[0] = 1;
+        a1[1] = 3;
+        a1[2] = 2;
+        Arrays.sort(a1);
+        System.out.println(Arrays.toString(a1));
     }
 }

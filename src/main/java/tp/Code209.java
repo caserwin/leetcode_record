@@ -13,8 +13,8 @@ public class Code209 {
      * 首先我们移动R，使得滑动窗口的区间满足给定的条件，然后我们再移动L，直到滑动区间不再满足给定的条件，如此循环往复，并在其过程中记录最优值。
      */
     public static void main(String[] args) {
-        int[] array = {2, 3, 1, 2, 4, 3};
-        System.out.println(new Code209().minSubArrayLen(7, array));
+        int[] array = {1, 4, 4};
+        System.out.println(new Code209().minSubArrayLen(4, array));
     }
 
     public int minSubArrayLen(int target, int[] nums) {
@@ -25,26 +25,22 @@ public class Code209 {
         int minLen = Integer.MAX_VALUE;
         int tmpSum = 0;
         while (right < nums.length) {
-            // TODO 注意：这里直接先做 + 操作
             tmpSum += nums[right];
             if (tmpSum >= target) {
-                minLen = Math.min(minLen, right - left + 1);
-                tmpSum = tmpSum - nums[left];
-                left++;
-                while (left < right) {
-                    if (tmpSum >= target) {
+                // 开始收缩左边窗口 left++，而且要注意里面的 while 是 <= ，等号要取到的
+                while (left <= right) {
+                    tmpSum = tmpSum - nums[left];
+                    // 当left 向右走到不满足条件时
+                    if (tmpSum < target) {
                         minLen = Math.min(minLen, right - left + 1);
-                        tmpSum = tmpSum - nums[left];
                         left++;
-                    } else {
-                        right++;
                         break;
                     }
+                    left++;
                 }
-            } else {
-                right++;
             }
+            right++;
         }
-        return minLen;
+        return minLen == Integer.MAX_VALUE ? 0 : minLen;
     }
 }

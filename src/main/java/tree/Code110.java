@@ -9,15 +9,15 @@ public class Code110 {
             return true;
         }
         int diff = getDeep(root.left, 0) - getDeep(root.right, 0);
-        return (Math.abs(diff) == 1 || Math.abs(diff) == 0)&&isBalanced(root.left)&&isBalanced(root.right) ;
+        return (Math.abs(diff) == 1 || Math.abs(diff) == 0) && isBalanced(root.left) && isBalanced(root.right);
     }
 
     private int getDeep(TreeNode root, int deep) {
         if (root == null) {
             return deep;
         }
-        if(root.right == null && root.left == null){
-            return deep+1;
+        if (root.right == null && root.left == null) {
+            return deep + 1;
         }
         int rdeep = root.right != null ? getDeep(root.right, deep + 1) : deep;
         int ldeep = root.left != null ? getDeep(root.left, deep + 1) : deep;

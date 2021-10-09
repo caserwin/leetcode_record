@@ -1,4 +1,6 @@
-package tree;
+package dfs.basic;
+
+import tree.TreeNode;
 
 /**
  * @author yidxue

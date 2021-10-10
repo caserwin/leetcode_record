@@ -4,6 +4,10 @@ import java.util.*;
 
 /**
  * @author yidxue
+ * 核心：
+ * 1. 首先要记录每个节点的父节点，数据存放到一个 HashMap 中。
+ * 2. 根据这个HashMap 找到指定节点1、2 所有的父节点。
+ * 3. 两个父节点结合的第一个交集就是最近公共祖先。
  */
 public class Code236 {
 

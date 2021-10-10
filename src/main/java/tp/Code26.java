@@ -8,9 +8,26 @@ package tp;
 public class Code26 {
     public static void main(String[] args) {
 //        int[] nums = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
-        int[] nums = {1};
-        System.out.println(removeDuplicates(nums));
+        int[] nums = {1, 1, 2};
+        System.out.println(new Code26().removeDuplicates1(nums));
     }
+
+    /**
+     * 和 283 非常像，唯一不同的是 283 需要交换，但是这里直接用fast指针的值替换 slow 指针的值即可。
+     */
+    public int removeDuplicates1(int[] nums) {
+        int fast = 0;
+        int slow = 0;
+        while (fast < nums.length - 1) {
+            if (nums[fast] != nums[fast + 1]) {
+                nums[slow] = nums[fast];
+                slow++;
+            }
+            fast++;
+        }
+        return slow;
+    }
+
 
     /**
      * 错误记录：
@@ -19,7 +36,7 @@ public class Code26 {
      * 3. right 是全局变量，不是局部变量
      * 4. if (right < nums.length && nums[left] == nums[right])
      */
-    public static int removeDuplicates(int[] nums) {
+    public int removeDuplicates(int[] nums) {
         int length = 0;
         int left = 0;
         int right = left + 1;

@@ -1,9 +1,7 @@
 package tp;
 
 /**
- * User: caserwin
- * Date: 2021/10/2 2:45 下午
- * Description:
+ * @author yidxue
  */
 public class Code239 {
     public int[] maxSlidingWindow(int[] nums, int k) {

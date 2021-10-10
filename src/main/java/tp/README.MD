@@ -1,6 +1,7 @@
 双指针，有三种类型：
 1. 快慢指针:
-    283. 移动零元素，且非零元素保持相对位置
 2. 左右指针
 3. 滑动窗口
-    239. 滑动窗口最大值
+
+
+滑动串口模板：https://leetcode-cn.com/problems/max-consecutive-ones-iii/solution/fen-xiang-hua-dong-chuang-kou-mo-ban-mia-f76z/

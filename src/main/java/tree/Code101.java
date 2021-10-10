@@ -1,24 +1,9 @@
 package tree;
 
 /**
- * User: caserwin
- * Date: 2021/7/26 4:56 下午
- * Description:
+ * @author yidxue
  */
 public class Code101 {
-    /**
-     * 二叉树
-     */
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
-
     public static void main(String[] args) {
 
     }

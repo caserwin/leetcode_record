@@ -4,6 +4,8 @@ package tp;
  * User: caserwin
  * Date: 2021-07-25 17:17
  * Description:
+ * 1. 双指正，左右指针技巧
+ * 2. 如果当前右边的高比较短，则 right--。如果左边的高比较短，则 left++.
  */
 public class Code11 {
 

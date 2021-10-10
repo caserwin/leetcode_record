@@ -7,26 +7,25 @@ package tp;
  */
 public class Code283 {
 
-
     public static void main(String[] args) {
         int[] nums = {1, 1, 0, 0, 3, 12};
         new Code283().moveZeroes1(nums);
     }
 
     /**
-     * 和 code 26， 27 异曲同工，两个指针实现即可
+     * 1. 双指正-快慢指针技巧
      */
     public void moveZeroes1(int[] nums) {
-        int left = 0;
-        int right = 0;
+        int slow = 0;
+        int fast = 0;
 
-        while (right < nums.length) {
+        while (fast < nums.length) {
             // 如果当前元素非 0，则交换到左边
-            if (nums[right] != 0) {
-                swap(nums, left, right);
-                left++;
+            if (nums[fast] != 0) {
+                swap(nums, slow, fast);
+                slow++;
             }
-            right++;
+            fast++;
         }
     }
 

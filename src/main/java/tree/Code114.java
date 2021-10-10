@@ -1,12 +1,42 @@
 package tree;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
- * User: caserwin
- * Date: 2021/10/8 4:56 下午
- * Description:  二叉树展开为链表
+ * Description: 二叉树展开为链表形式，该链表其实也是二叉树，但是没有left 节点
+ * @author yidxue
  */
 public class Code114 {
-    public void flatten(TreeNode root) {
+    public static void main(String[] args) {
+        TreeNode treeNode1 = TreeDataSource.getTreeNode1();
+        new Code114().flatten(treeNode1);
 
+        TreeNode treeNode = list.get(0);
+        // 只打印右节点
+        while (treeNode != null) {
+            System.out.println(treeNode.val);
+            treeNode = treeNode.right;
+        }
+    }
+
+    static List<TreeNode> list = new ArrayList<>();
+
+    public void flatten(TreeNode root) {
+        preorderTraversal(root, list);
+        int size = list.size();
+        for (int i = 1; i < size; i++) {
+            TreeNode prev = list.get(i - 1), curr = list.get(i);
+            prev.left = null;
+            prev.right = curr;
+        }
+    }
+
+    public void preorderTraversal(TreeNode root, List<TreeNode> list) {
+        if (root != null) {
+            list.add(root);
+            preorderTraversal(root.left, list);
+            preorderTraversal(root.right, list);
+        }
     }
 }

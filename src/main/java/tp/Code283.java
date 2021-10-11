@@ -1,9 +1,8 @@
 package tp;
 
 /**
- * User: caserwin
- * Date: 2021/7/26 5:28 下午
- * Description:
+ * @author yidxue
+ * 移动0，保持非零元素相对位置，和26题解法一致。
  */
 public class Code283 {
 
@@ -13,7 +12,7 @@ public class Code283 {
     }
 
     /**
-     * 1. 双指正-快慢指针技巧
+     * 双指正-快慢指针技巧
      */
     public void moveZeroes1(int[] nums) {
         int slow = 0;

@@ -2,9 +2,13 @@ package dp;
 
 /**
  * @author yidxue
+ * 爬楼梯
  */
 public class Code70 {
-    public static int climbStairs(int n) {
+    public static void main(String[] args) {
+        System.out.println(new Code70().climbStairs(10));
+    }
+    public int climbStairs(int n) {
         if (n == 1) {
             return 1;
         }

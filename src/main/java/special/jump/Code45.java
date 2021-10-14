@@ -2,6 +2,7 @@ package special.jump;
 
 /**
  * @author yidxue
+ * 跳跃游戏2
  */
 public class Code45 {
     public int jump(int[] nums) {

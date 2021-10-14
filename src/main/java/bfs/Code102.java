@@ -9,9 +9,7 @@ import java.util.List;
 import java.util.Queue;
 
 /**
- * User: caserwin
- * Date: 2021/10/12 8:19 上午
- * Description:
+ * @author yidxue
  */
 public class Code102 {
     public static void main(String[] args) {

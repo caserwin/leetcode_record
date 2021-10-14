@@ -2,8 +2,6 @@ package tree;
 
 /**
  * Date: 2021/10/10 3:59 下午
- *
- * @author yidxue
  */
 public class TreeDataSource {
 
@@ -34,4 +32,20 @@ public class TreeDataSource {
         return treeNode1;
     }
 
+    public static TreeNode getTreeNode2() {
+        //[1,2,3,4,null,null,5]
+        TreeNode treeNode1 = new TreeNode(1);
+        TreeNode treeNode2 = new TreeNode(2);
+        TreeNode treeNode3 = new TreeNode(3);
+        TreeNode treeNode4 = new TreeNode(4);
+        TreeNode treeNode5 = new TreeNode(5);
+
+        treeNode1.left = treeNode2;
+        treeNode1.right = treeNode3;
+
+        treeNode2.left = treeNode4;
+
+        treeNode3.right = treeNode5;
+        return treeNode1;
+    }
 }

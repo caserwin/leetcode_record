@@ -8,11 +8,62 @@ public class Code283 {
 
     public static void main(String[] args) {
         int[] nums = {1, 1, 0, 0, 3, 12};
-        new Code283().moveZeroes1(nums);
+        new Code283().moveZeroes3(nums);
+
+        for (int num : nums) {
+            System.out.println(num);
+        }
     }
 
     /**
-     * 双指正-快慢指针技巧
+     * 单指针
+     */
+    public int[] moveZeroes3(int[] nums) {
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != 0) {
+                continue;
+            }
+            int j = i;
+            while (j < nums.length) {
+                if (nums[j] != 0) {
+                    nums[i] = nums[j];
+                    nums[j] = 0;
+                    break;
+                }
+                j++;
+            }
+        }
+        return nums;
+    }
+
+    /**
+     * 双指针
+     */
+    public int[] moveZeroes2(int[] nums) {
+        int slow = 0;
+        int fast = 0;
+
+        while (fast < nums.length) {
+            // 一直把 slow、fast 移到出现0 的地方
+            if (nums[slow] != 0) {
+                slow++;
+                fast = Math.max(fast, slow);
+                continue;
+            }
+
+            if (nums[fast] != 0 && nums[slow] == 0) {
+                int tmp = nums[fast];
+                nums[fast] = nums[slow];
+                nums[slow] = tmp;
+            }
+
+            fast++;
+        }
+        return nums;
+    }
+
+    /**
+     * 官方解答
      */
     public void moveZeroes1(int[] nums) {
         int slow = 0;

@@ -2,6 +2,8 @@ package linkedList;
 
 /**
  * @author yidxue
+ * 1. 核心是先找到倒数第 n+1 个节点
+ * 2. 怎么找？一个先走k步、另一个再开始走。
  */
 public class Code19 {
     public static void main(String[] args) {

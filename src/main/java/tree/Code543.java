@@ -2,6 +2,7 @@ package tree;
 
 /**
  * @author yidxue
+ * 二叉树的直径
  */
 public class Code543 {
 

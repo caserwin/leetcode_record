@@ -7,14 +7,10 @@ package special.bs;
  */
 public class Code704 {
 
-
     public static void main(String[] args) {
         int[] arr = {5};
         int target = -5;
-
-
         System.out.println(search(arr, target));
-
     }
 
     public static int search(int[] nums, int target) {

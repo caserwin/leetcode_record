@@ -21,7 +21,7 @@ public class Code198 {
             return Math.max(nums[0], nums[1]);
         }
 
-        // 定义 dp[i] 是到底 i-1 家为止，最大能抢到的钱
+        // 定义 dp[i] 是到第 i-1 家为止，最大能抢到的钱
         int[] dp = new int[nums.length];
 
         // 初始化
@@ -30,7 +30,7 @@ public class Code198 {
 
         // 状态转移
         for (int i = 2; i < nums.length; i++) {
-            // 如果第 i 家不偷，那么到当前为止偷的最大值是 dp[i - 1]，如果第 i 家偷了，则最大值是 dp[i - 1] + num[i]
+            // 如果第 i 家不偷，那么到当前为止偷的最大值是 dp[i - 1]，如果第 i 家偷了，则最大值是 dp[i - 2] + num[i]
             dp[i] = Math.max(dp[i - 2] + nums[i], dp[i - 1]);
         }
         return dp[nums.length - 1];

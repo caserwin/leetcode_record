@@ -10,4 +10,6 @@
 最泛化的是第4题。
 
 
-参考：https://leetcode-cn.com/circle/article/qiAgHn/
+参考：
+https://leetcode-cn.com/circle/article/qiAgHn/
+https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247484508&idx=1&sn=42cae6e7c5ccab1f156a83ea65b00b78&scene=21#wechat_redirect

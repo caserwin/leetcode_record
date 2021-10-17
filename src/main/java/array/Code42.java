@@ -1,9 +1,8 @@
 package array;
 
 /**
- * User: caserwin
- * Date: 2021/10/7 5:28 下午
- * Description: 接雨水，和 Code 135 很像，都是遍历两次，用left 和right 数组的公共部分
+ * 接雨水，和 Code 135 很像，都是遍历两次，用left 和right 数组的公共部分
+ * https://leetcode-cn.com/problems/trapping-rain-water/
  */
 public class Code42 {
 

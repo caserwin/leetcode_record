@@ -3,6 +3,7 @@ package array;
 
 /**
  * @author yidxue
+ * 加一：https://leetcode-cn.com/problems/plus-one/
  */
 public class Code66 {
     public static void main(String[] args) {

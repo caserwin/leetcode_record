@@ -1,9 +1,8 @@
 package array;
 
 /**
- * User: caserwin
- * Date: 2021-07-25 16:34
- * Description:
+ * Description: 寻找两个正序数组的中位数
+ * https://leetcode-cn.com/problems/median-of-two-sorted-arrays/
  */
 public class Code4 {
     public static void main(String[] args) {

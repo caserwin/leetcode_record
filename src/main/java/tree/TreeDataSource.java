@@ -48,4 +48,22 @@ public class TreeDataSource {
         treeNode3.right = treeNode5;
         return treeNode1;
     }
+
+
+    public static TreeNode getTreeNode3() {
+        // [5,4,8,11,null,13,4,7,2,null,null,5,1]
+        TreeNode treeNode1 = new TreeNode(5);
+        TreeNode treeNode2 = new TreeNode(4);
+        TreeNode treeNode3 = new TreeNode(6);
+        TreeNode treeNode4 = new TreeNode(3);
+        TreeNode treeNode5 = new TreeNode(7);
+
+        treeNode1.left = treeNode2;
+        treeNode1.right = treeNode3;
+
+        treeNode3.left = treeNode4;
+        treeNode3.right = treeNode5;
+
+        return treeNode1;
+    }
 }

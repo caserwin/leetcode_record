@@ -3,6 +3,7 @@
 1. [494 目标和](https://leetcode-cn.com/problems/target-sum/)
 2. 22 括号生成
 3. 46 全排列
+4. 78 子集问题  （非常经典）
 
 ```
 void dfs(TreeNode root) {

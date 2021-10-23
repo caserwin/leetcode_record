@@ -1,5 +1,6 @@
 package baisc;
 
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 import java.util.Queue;
@@ -24,5 +25,25 @@ public class PriorityQueueDemo {
         System.out.println(q2.poll());
         System.out.println(q2.poll());
         System.out.println(q2.poll());
+        System.out.println("============");
+//        Queue<int[]> q3 = new PriorityQueue<>(new Comparator<int[]>() {
+//            @Override
+//            public int compare(int[] interval1, int[] interval2) {
+//                return interval1[0] - interval2[0];
+//            }
+//        });
+        Queue<int[]> q3 = new PriorityQueue<>(Comparator.comparingInt(interval -> interval[0]));
+
+        q3.offer(new int[]{1, 2});
+        q3.offer(new int[]{1, 3});
+        q3.offer(new int[]{2, 3});
+        q3.offer(new int[]{4, 3});
+        q3.offer(new int[]{3, 3});
+
+        System.out.println(Arrays.toString(q3.poll()));
+        System.out.println(Arrays.toString(q3.poll()));
+        System.out.println(Arrays.toString(q3.poll()));
+        System.out.println(Arrays.toString(q3.poll()));
+        System.out.println(Arrays.toString(q3.poll()));
     }
 }

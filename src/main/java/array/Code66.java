@@ -10,6 +10,10 @@ public class Code66 {
 
     }
 
+    /**
+     * 1. 首先，数组的末尾直接 +1；
+     * 2. 其次，从数组的末尾开始判断是否 > 10，如果大于10 则减去 10，然后进位 +1。
+     */
     public int[] plusOne(int[] digits) {
         // 直接末尾 + 1
         digits[digits.length - 1] = digits[digits.length - 1] + 1;

@@ -1,9 +1,7 @@
 package linkedList;
 
 /**
- * User: caserwin
- * Date: 2021/10/8 10:27 上午
- * Description:
+ * 删除排序链表中的重复元素
  */
 public class Code83 {
     public static void main(String[] args) {
@@ -21,6 +19,9 @@ public class Code83 {
         }
     }
 
+    /**
+     * 链表核心：用一个指针指向链表的某个位置。比如：指向链表头，就写：ListNode curNode = head;
+     */
     public ListNode deleteDuplicates(ListNode head) {
         if (head == null) {
             return head;

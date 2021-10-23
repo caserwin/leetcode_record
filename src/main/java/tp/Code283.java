@@ -8,12 +8,33 @@ public class Code283 {
 
     public static void main(String[] args) {
         int[] nums = {1, 1, 0, 0, 3, 12};
-        new Code283().moveZeroes3(nums);
+        new Code283().moveZeroes4(nums);
 
         for (int num : nums) {
             System.out.println(num);
         }
     }
+
+    public int[] moveZeroes4(int[] nums) {
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != 0) {
+                continue;
+            }
+
+            int tmp = i + 1;
+            while (tmp < nums.length) {
+                if (nums[tmp] != 0) {
+                    nums[i] = nums[tmp];
+                    nums[tmp] = 0;
+                    break;
+                }
+                tmp++;
+            }
+        }
+
+        return nums;
+    }
+
 
     /**
      * 单指针

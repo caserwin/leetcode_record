@@ -5,10 +5,10 @@ import java.util.List;
 
 /**
  * @author yidxue
+ * 求子集
  */
 public class Code78 {
 
-    List<List<Integer>> res = new ArrayList<>();
 
     public static void main(String[] args) {
         int[] nums = {1, 2, 3};
@@ -30,17 +30,22 @@ public class Code78 {
      * 5. dfs参数：int[] nums, int start, List<Integer> list
      */
     public List<List<Integer>> subsets(int[] nums) {
+        // 结果列表
+        List<List<Integer>> res = new ArrayList<>();
+
+        // 路径列表
         List<Integer> list = new ArrayList<>();
-        dfs(nums, 0, list);
+
+        dfs(nums, 0, list, res);
         return res;
     }
 
-    public void dfs(int[] nums, int start, List<Integer> list) {
+    public void dfs(int[] nums, int index, List<Integer> list, List<List<Integer>> res) {
         res.add(new ArrayList<>(list));
         // 遍历后面的元素
-        for (int i = start; i < nums.length; i++) {
+        for (int i = index; i < nums.length; i++) {
             list.add(nums[i]);
-            dfs(nums, i + 1, list);
+            dfs(nums, i + 1, list, res);
             list.remove(list.size() - 1);
         }
     }

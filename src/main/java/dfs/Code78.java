@@ -1,6 +1,7 @@
 package dfs;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -34,13 +35,13 @@ public class Code78 {
         List<List<Integer>> res = new ArrayList<>();
 
         // 路径列表
-        List<Integer> list = new ArrayList<>();
+        LinkedList<Integer> list = new LinkedList<>();
 
         dfs(nums, 0, list, res);
         return res;
     }
 
-    public void dfs(int[] nums, int index, List<Integer> list, List<List<Integer>> res) {
+    public void dfs(int[] nums, int index, LinkedList<Integer> list, List<List<Integer>> res) {
         res.add(new ArrayList<>(list));
         // 遍历后面的元素
         for (int i = index; i < nums.length; i++) {

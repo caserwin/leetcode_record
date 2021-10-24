@@ -72,6 +72,6 @@ public class Code93 {
         for (String str : linkedList) {
             res.append(str);
         }
-        return res.toString().endsWith(".") ? res.toString().substring(0, res.toString().length() - 1) : res.toString();
+        return res.toString().endsWith(".") ? res.substring(0, res.toString().length() - 1) : res.toString();
     }
 }

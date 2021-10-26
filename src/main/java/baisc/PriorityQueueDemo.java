@@ -29,11 +29,9 @@ public class PriorityQueueDemo {
         Queue<int[]> q3 = new PriorityQueue<>(Comparator.comparingInt(interval -> interval[0]));
 
         q3.offer(new int[]{1, 2});
-        q3.offer(new int[]{2, 3});
         q3.offer(new int[]{4, 3});
         q3.offer(new int[]{3, 3});
 
-        System.out.println(Arrays.toString(q3.poll()));
         System.out.println(Arrays.toString(q3.poll()));
         System.out.println(Arrays.toString(q3.poll()));
         System.out.println(Arrays.toString(q3.poll()));

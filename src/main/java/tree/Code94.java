@@ -9,16 +9,16 @@ import java.util.List;
 public class Code94 {
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> resList = new ArrayList<>();
-        iter(root, resList);
+        dfs(root, resList);
         return resList;
     }
 
-    private void iter(TreeNode root, List<Integer> resList) {
+    private void dfs(TreeNode root, List<Integer> resList) {
         if (root == null){
             return;
         }
-        iter(root.left, resList);
+        dfs(root.left, resList);
         resList.add(root.val);
-        iter(root.right, resList);
+        dfs(root.right, resList);
     }
 }

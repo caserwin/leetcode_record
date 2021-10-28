@@ -30,11 +30,11 @@ public class Code104 {
             return 0;
         }
 
-        getMaxDeepth(root, 1);
+        dfs(root, 1);
         return maxDeep;
     }
 
-    private void getMaxDeepth(TreeNode node, int deep) {
+    private void dfs(TreeNode node, int deep) {
         // 如果 node 是叶节点
         if (node.left == null && node.right == null) {
             maxDeep = Math.max(maxDeep, deep);
@@ -42,11 +42,11 @@ public class Code104 {
         }
 
         if (node.left != null) {
-            getMaxDeepth(node.left, deep + 1);
+            dfs(node.left, deep + 1);
         }
 
         if (node.right != null) {
-            getMaxDeepth(node.right, deep + 1);
+            dfs(node.right, deep + 1);
         }
     }
 }

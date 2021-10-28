@@ -27,9 +27,7 @@ public class Code101 {
         if (t1 == null || t2 == null) {
             return false;
         }
-        return (t1.val == t2.val)
-                && isMirror(t1.right, t2.left)
-                && isMirror(t1.left, t2.right);
+        return (t1.val == t2.val) && isMirror(t1.right, t2.left) && isMirror(t1.left, t2.right);
     }
 
 }

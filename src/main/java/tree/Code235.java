@@ -12,8 +12,8 @@ public class Code235 {
         List<TreeNode> list1 = new ArrayList<>();
         List<TreeNode> list2 = new ArrayList<>();
 
-        iter(root, list1, p);
-        iter(root, list2, q);
+        dfs(root, list1, p);
+        dfs(root, list2, q);
 
         int len = Math.min(list1.size(), list2.size());
         TreeNode ancestor = null;
@@ -27,16 +27,16 @@ public class Code235 {
         return ancestor;
     }
 
-    private void iter(TreeNode root, List<TreeNode> list, TreeNode node) {
+    private void dfs(TreeNode root, List<TreeNode> list, TreeNode node) {
         if (root == node) {
             list.add(node);
             return;
         }
         list.add(root);
         if (node.val >= root.val) {
-            iter(root.right, list, node);
+            dfs(root.right, list, node);
         } else {
-            iter(root.left, list, node);
+            dfs(root.left, list, node);
         }
     }
 }

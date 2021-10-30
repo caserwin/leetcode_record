@@ -23,8 +23,10 @@ public class Code114 {
     static List<TreeNode> list = new ArrayList<>();
 
     public void flatten(TreeNode root) {
+        // 先用先序遍历存为一个 List
         preorderTraversal(root, list);
         int size = list.size();
+        // 从 List 中构建只有 right 部分节点的二叉树
         for (int i = 1; i < size; i++) {
             TreeNode prev = list.get(i - 1), curr = list.get(i);
             prev.left = null;

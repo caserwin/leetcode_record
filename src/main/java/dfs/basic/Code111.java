@@ -32,13 +32,13 @@ public class Code111 {
     }
 
 
-
     /**
      * 方法2：
      * 1. 是我自己的写法，用了带全局变量的 dfs 方法。另外一种是不带全局变量的dfs方法，直接复制leetcode 官方解答了，参考方法1
      * 2. 对比 104 题，方法2 写法基本一致
      */
     int minDeep = Integer.MAX_VALUE;
+
     public int minDepth2(TreeNode root) {
         if (root == null) {
             return 0;

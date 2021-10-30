@@ -16,25 +16,25 @@ public class Code704 {
     public static int search(int[] nums, int target) {
 
         int index = nums.length / 2;
-        int start = 0;
-        int end = nums.length - 1;
+        int left = 0;
+        int right = nums.length - 1;
 
-        while (start <= end) {
+        while (left <= right) {
             if (target == nums[index]) {
                 return index;
             }
 
             // 注意这里是 index + 1
             if (target > nums[index]) {
-                start = index + 1;
+                left = index + 1;
             }
 
             // 注意这里是 index - 1
             if (target < nums[index]) {
-                end = index - 1;
+                right = index - 1;
             }
 
-            index = (start + end) / 2;
+            index = (left + right) / 2;
         }
         return -1;
     }

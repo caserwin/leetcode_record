@@ -1,29 +1,10 @@
 package linkedList;
 
 /**
- * User: caserwin
- * Date: 2021/10/8 11:52 上午
- * Description: 反转链表
+ * @author yidxue
+ * 反转链表
  */
 public class Code206 {
-//    public static ListNode reverseList(ListNode node) {
-//        if (node == null || node.next == null) {
-//            return node;
-//        }
-//
-//        ListNode cur = node;
-//        ListNode next = cur.next;
-//        cur.next = null;
-//
-//        while (next != null) {
-//            ListNode tmp = next.next;
-//            next.next = cur;
-//
-//            cur = next;
-//            next = tmp;
-//        }
-//        return cur;
-//    }
 
     public static ListNode reverseList(ListNode node) {
         ListNode pre = null, cur = node;
@@ -34,5 +15,22 @@ public class Code206 {
             cur = next;
         }
         return pre;
+    }
+
+    public ListNode reverseList1(ListNode node) {
+        if (node == null) {
+            return node;
+        }
+
+        // head 指向 node第一个节点
+        ListNode pre = null, cur = node;
+        while (cur.next != null) {
+            ListNode tmp = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = tmp;
+        }
+        cur.next = pre;
+        return cur;
     }
 }

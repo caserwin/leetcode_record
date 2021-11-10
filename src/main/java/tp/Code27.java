@@ -15,7 +15,7 @@ public class Code27 {
     }
 
     /**
-     * 双指针法
+     * 双指针法，左右指针
      */
     public static int removeElementV2(int[] nums, int val) {
         int left = 0;

@@ -36,13 +36,12 @@ public class Code113 {
             return;
         }
 
+        track.add(curNode.val);
         if (curNode.left == null && curNode.right == null && targetSum - curNode.val == 0) {
-            track.add(curNode.val);
             res.add(new ArrayList<>(track));
             return;
         }
 
-        track.add(curNode.val);
         if (curNode.left != null) {
             dfs(curNode.left, targetSum - curNode.val, track, res);
             track.removeLast();

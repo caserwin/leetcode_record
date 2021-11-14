@@ -1,4 +1,6 @@
-package dfs;
+package dp;
+
+import baisc.ArrayUtil;
 
 import java.util.Arrays;
 
@@ -17,10 +19,10 @@ public class Code787 {
 
     public int findCheapestPrice(int n, int[][] flights, int src, int dst, int k) {
         final int INF = 10000 * 101 + 1;
-        // f[t][i] 表示通过恰好 t 次航班，从出发城市 src 到达城市 i 需要的最小花费。
+        // dp[i][j] 表示从 src 出发，经过 i 次航班，到达城市 j 的最小花费。下面之所以是 k+2，是因为k 次周转，要经过 k+1 个航班，所以初始化为 k+2 长度（从0开始）。
         int[][] dp = new int[k + 2][n];
 
-        // 初始化
+        // 初始化，因为要求最小，所以默认初始化长度都是最大
         for (int i = 0; i < k + 2; ++i) {
             Arrays.fill(dp[i], INF);
         }
@@ -33,6 +35,8 @@ public class Code787 {
                 dp[t][i] = Math.min(dp[t][i], dp[t - 1][j] + cost);
             }
         }
+
+//        ArrayUtil.printMatrix(dp);
 
         int ans = INF;
         for (int t = 1; t <= k + 1; ++t) {

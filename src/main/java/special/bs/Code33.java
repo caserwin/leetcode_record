@@ -3,6 +3,8 @@ package special.bs;
 /**
  * @author yidxue
  * 搜索旋转排序数组：基于二分法
+ *
+ * 本质上是判断 target 数是否位于有序部分，如果是则在有序部分继续搜索，如果不是则搜索无序部分
  */
 public class Code33 {
     public static void main(String[] args) {

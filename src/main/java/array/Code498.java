@@ -49,7 +49,7 @@ public class Code498 {
                 tmpRow--;
             }
         } else {
-            // 表示从右上到左下，本质上行是递增的
+            // 表示从右上到左下，本质上行是递增的，列是递减的
             int tmpCol = target;
             while (tmpCol >= 0 && target - tmpCol >= 0) {
                 // TODO 这里要加判断，不然边界问题会报错

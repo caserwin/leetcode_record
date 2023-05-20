@@ -9,7 +9,7 @@ public class Code135 {
 
     /**
      * 1. 遍历两次，一次填 left 数组，一次填 right 数组
-     * 2. 从左到右遍历时，如果i+1 大于 i，则left[i+1] = left[i]，否则left[i+1] 不变。
+     * 2. 从左到右遍历时，如果i+1 大于 i，则left[i+1] = left[i]+1，否则left[i+1] 不变。
      * 3. 从右到左遍历时，如果i-1 大于 i，则right[i-1] = 则right[i]+1，否则right[i-1] 不变。
      */
     public int candy(int[] ratings) {

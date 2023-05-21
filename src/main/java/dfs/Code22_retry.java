@@ -8,10 +8,10 @@ import java.util.List;
  * @author casyd_xue
  * 括号生成
  */
-public class Code22 {
+public class Code22_retry {
     public static void main(String[] args) {
-        int n = 3;
-        System.out.println(new Code22().generateParenthesis(n));
+        int n = 4;
+        System.out.println(new Code22_retry().generateParenthesis(n));
     }
 
     /**
@@ -19,29 +19,31 @@ public class Code22 {
      */
     public List<String> generateParenthesis(int n) {
         // 结果列表
-        List<String> ans = new ArrayList<>();
+        List<String> res = new ArrayList<>();
 
         // 已选路径
-        LinkedList<String> linkedList = new LinkedList<>();
+        LinkedList<String> track = new LinkedList<>();
 
-        dfs(ans, linkedList, 0, 0, n);
-        return ans;
+        // dfs
+        dfs(res, track, n, 0, 0);
+        return res;
     }
 
-    public void dfs(List<String> ans, LinkedList<String> track, int open, int close, int max) {
-        if (track.size() == max * 2) {
-            ans.add(toString(track));
+    public void dfs(List<String> res, LinkedList<String> track, int n, int left, int right) {
+        if (track.size() == n * 2) {
+            res.add(toString(track));
             return;
         }
 
-        if (open < max) {
+        for (int i = left; i < n; i++) {
             track.add("(");
-            dfs(ans, track, open + 1, close, max);
+            dfs(res, track, n, i + 1, right);
             track.removeLast();
         }
-        if (close < open) {
+
+        for (int i = right; i < left; i++) {
             track.add(")");
-            dfs(ans, track, open, close + 1, max);
+            dfs(res, track, n, left, i + 1);
             track.removeLast();
         }
     }

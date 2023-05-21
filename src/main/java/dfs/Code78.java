@@ -45,8 +45,8 @@ public class Code78 {
         res.add(new ArrayList<>(list));
         // 遍历后面的元素
         for (int i = index; i < nums.length; i++) {
-            list.add(nums[i]);
-            dfs(nums, i + 1, list, res);
+            list.add(nums[index]);
+            dfs(nums, index + 1, list, res);
             list.remove(list.size() - 1);
         }
     }

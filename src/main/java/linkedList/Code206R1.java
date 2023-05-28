@@ -1,4 +1,4 @@
-package fuxi;
+package linkedList;
 
 import linkedList.ListNode;
 
@@ -7,7 +7,7 @@ import linkedList.ListNode;
  * Date: 2021/11/21 2:32 下午
  * Description:
  */
-public class LeetCode206 {
+public class Code206R1 {
     public static void main(String[] args) {
 
     }

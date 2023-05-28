@@ -11,10 +11,10 @@ package special.jump;
 public class Code55 {
     public static void main(String[] args) {
         int[] arr = {3, 2, 1, 0, 4};
-        System.out.println(new Code55().canJump(arr));
+        System.out.println(new Code55().canJump1(arr));
     }
 
-    public boolean canJump(int[] nums) {
+    public boolean canJump1(int[] nums) {
         int maxIndex = 0;
         for (int i = 0; i < nums.length; i++) {
             if (i <= maxIndex) {
@@ -25,5 +25,25 @@ public class Code55 {
             }
         }
         return false;
+    }
+
+    public boolean canJump2(int[] nums) {
+        // 表示是否能跳到位置 i
+        boolean[] dp = new boolean[nums.length];
+        // 初始化
+        for (int i = 0; i < nums.length; i++) {
+            dp[i] = false;
+        }
+        dp[0] = true;
+
+        // 初始化
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = 0; j < i; j++) {
+                if (nums[j] + j >= i) {
+                    dp[i] = dp[j];
+                }
+            }
+        }
+        return dp[dp.length - 1];
     }
 }

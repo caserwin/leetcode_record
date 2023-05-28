@@ -1,4 +1,4 @@
-package fuxi;
+package tp;
 
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -9,7 +9,7 @@ import java.util.List;
  * Date: 2021/11/21 2:40 下午
  * Description:
  */
-public class LeetCode3 {
+public class Code3R1 {
 
     public static void main(String[] args) {
         String s = "aab";

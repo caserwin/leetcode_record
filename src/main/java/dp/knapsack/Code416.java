@@ -33,7 +33,7 @@ public class Code416 {
         // 定义dp[i][j]: 表示从 nums[0:i] 范围做选择，是否存在一种选取方案使得被选取的元素和等于 j。
         boolean[][] dp = new boolean[len][target + 1];
 
-        // 初始化：因为候选数 nums[0] 是正整数，凑不出和为 0；
+        // 初始化：因为候选数 nums[0] 是正整数，只要都不选就能凑出和为 0；
         for (int i = 0; i < len; i++) {
             dp[i][0] = true;
         }
@@ -42,6 +42,7 @@ public class Code416 {
         for (int i = 1; i < len; i++) {
             for (int j = 0; j <= target; j++) {
                 if (nums[i] <= j) {
+                    // 不选第i个元素的话，就是 dp[i - 1][j]，如果选则了第i个元素，就是 dp[i - 1][j-num[j]]
                     dp[i][j] = dp[i - 1][j] || dp[i - 1][j - nums[i]];
                 } else {
                     dp[i][j] = dp[i - 1][j];

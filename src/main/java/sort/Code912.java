@@ -5,6 +5,7 @@ package sort;
  * 1. 基准数以 left 为主
  * 2. 若基准数选择 left，则要从right 开始遍历。
  * 3. 记住基准数要归位。
+ * 4. 除了 while 中等号取不到，其余等号都可以取到。
  */
 public class Code912 {
 
@@ -17,9 +18,9 @@ public class Code912 {
         }
     }
 
-    public int[] sortArray(int[] nums) {
+    public void sortArray(int[] nums) {
         sort(nums, 0, nums.length - 1);
-        return nums;
+//        return nums;
     }
 
     /**

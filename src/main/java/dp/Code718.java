@@ -9,7 +9,7 @@ public class Code718 {
     public static void main(String[] args) {
         int[] nums1 = {0, 1, 1, 1};
         int[] nums2 = {1, 0, 1, 0, 1};
-        new Code718().findLength(nums1, nums2);
+        System.out.println(new Code718().findLength(nums1, nums2));
     }
 
     public int findLength(int[] nums1, int[] nums2) {

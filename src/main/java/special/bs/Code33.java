@@ -2,43 +2,74 @@ package special.bs;
 
 /**
  * @author yidxue
- * 搜索旋转排序数组：基于二分法
- *
- * 本质上是判断 target 数是否位于有序部分，如果是则在有序部分继续搜索，如果不是则搜索无序部分
+ * 1. 联立 704 二分查找：所有不确定要不要取到等号的地方都取等号
+ * 2. left 和 right 分别通过 mid + 1 或 mid - 1 更新
  */
 public class Code33 {
     public static void main(String[] args) {
         int[] nums = {3, 1};
         int target = 1;
-        System.out.println(new Code33().search(nums, target));
+        System.out.println(new Code33().search2(nums, target));
     }
 
-    public int search(int[] nums, int target) {
+//    public int search(int[] nums, int target) {
+//        int left = 0;
+//        int right = nums.length - 1;
+//        while (left <= right) {
+//            int mid = (left + right) / 2;
+//
+//            if (nums[mid] == target) {
+//                return mid;
+//            }
+//
+//            // TODO 判断 0 到mid 位置是升序的，且这个等号必须取到，否则 nums=[3,1] target=1 这个case 过不了
+//            if (nums[mid] >= nums[0]) {
+//                if (nums[mid] > target && target >= nums[0]) {
+//                    // 如果 target 数字在升序部分
+//                    right = mid - 1;
+//                } else {
+//                    // 如果 target 数字在乱序部分
+//                    left = mid + 1;
+//                }
+//            } else {
+//                // 说明 mid 到 结束位置是升序的
+//                if (nums[nums.length - 1] >= target && target > nums[mid]) {
+//                    left = mid + 1;
+//                } else {
+//                    right = mid - 1;
+//                }
+//            }
+//        }
+//        return -1;
+//    }
+
+    /**
+     * 通过测评
+     */
+    public int search2(int[] nums, int target) {
         int left = 0;
         int right = nums.length - 1;
+
         while (left <= right) {
             int mid = (left + right) / 2;
-
             if (nums[mid] == target) {
                 return mid;
             }
-
-            // TODO 判断 0 到mid 位置是升序的，且这个等号必须取到，否则 nums=[3,1] target=1 这个case 过不了
-            if (nums[mid] >= nums[0]) {
-                if (nums[mid] > target && target >= nums[0]) {
-                    // 如果 target 数字在升序部分
+            if (nums[mid] >= nums[left]) {
+                // 表示 left -mid 这部分是升序的，且 mid- right 这部分是经过旋转的
+                if (nums[mid] >= target && target >= nums[left]) {
                     right = mid - 1;
                 } else {
-                    // 如果 target 数字在乱序部分
                     left = mid + 1;
                 }
             } else {
-                // 说明 mid 到 结束位置是升序的
-                if (nums[nums.length - 1] >= target && target > nums[mid]) {
+                // 表示 left -mid 这部分是经过旋转的，且 mid- right 这部分是升序的
+                if (nums[mid] <= target && target <= nums[right]) {
                     left = mid + 1;
                 } else {
                     right = mid - 1;
                 }
+
             }
         }
         return -1;

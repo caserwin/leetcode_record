@@ -23,6 +23,6 @@ public class Code206R1 {
             cur = next;
         }
 
-        return cur;
+        return pre;
     }
 }

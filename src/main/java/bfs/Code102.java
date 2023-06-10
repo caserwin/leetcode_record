@@ -11,11 +11,15 @@ import java.util.*;
  * 1. 每一层遍历开始时，先用一个 ArrayList 记录这一层的遍历结果。
  * 2. 每一层遍历开始时，都先要知道这一层有多少个元素，记为 currLevelNum。
  * 3. 因为 Queue 有先进先出特点，所以当 currLevelNum 确定时，只要通过 for 循环不断 poll，就能拿到当前层所有节点元素。
+ * 4. 还有就是要记得 Java 中 Queue 的实例化方式。
  */
 public class Code102 {
     public static void main(String[] args) {
         TreeNode treeNode1 = TreeDataSource.getTreeNode1();
-        new Code102().levelOrder(treeNode1);
+        List<List<Integer>> res = new Code102().levelOrder(treeNode1);
+        for (List<Integer> re : res) {
+            System.out.println(re);
+        }
     }
 
     public List<List<Integer>> levelOrder(TreeNode root) {

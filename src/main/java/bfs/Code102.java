@@ -3,13 +3,14 @@ package bfs;
 import tree.TreeDataSource;
 import tree.TreeNode;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 /**
  * @author yidxue
+ * 记录：code102，二叉树层序遍历，即广度优先遍历
+ * 1. 每一层遍历开始时，先用一个 ArrayList 记录这一层的遍历结果。
+ * 2. 每一层遍历开始时，都先要知道这一层有多少个元素，记为 currLevelNum。
+ * 3. 因为 Queue 有先进先出特点，所以当 currLevelNum 确定时，只要通过 for 循环不断 poll，就能拿到当前层所有节点元素。
  */
 public class Code102 {
     public static void main(String[] args) {
@@ -23,8 +24,8 @@ public class Code102 {
             return ret;
         }
 
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.offer(root);
+        Queue<TreeNode> queue = new ArrayDeque<>();
+        queue.add(root);
         while (!queue.isEmpty()) {
             List<Integer> level = new ArrayList<>();
             int currentLevelSize = queue.size();
@@ -32,10 +33,10 @@ public class Code102 {
                 TreeNode node = queue.poll();
                 level.add(node.val);
                 if (node.left != null) {
-                    queue.offer(node.left);
+                    queue.add(node.left);
                 }
                 if (node.right != null) {
-                    queue.offer(node.right);
+                    queue.add(node.right);
                 }
             }
             ret.add(level);

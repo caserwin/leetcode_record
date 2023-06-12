@@ -6,7 +6,7 @@ import java.util.Map;
 /**
  * User: caserwin
  * Date: 2023/6/13 1:31 上午
- * Description:
+ * Description:中文转阿拉伯数字
  */
 public class Alaboshuzizhuanzhongwen {
     public static void main(String[] args) {

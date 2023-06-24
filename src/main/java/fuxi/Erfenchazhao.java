@@ -3,6 +3,7 @@ package fuxi;
 /**
  * 1. 联立33：所有不确定要不要取到等号的地方都取等号
  * 2. left 和 right 分别通过 mid + 1 或 mid - 1 更新
+ * 3. 和 34 题一起看
  */
 public class Erfenchazhao {
 

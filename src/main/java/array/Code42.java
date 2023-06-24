@@ -5,6 +5,10 @@ package array;
  * https://leetcode-cn.com/problems/trapping-rain-water/
  */
 public class Code42 {
+    public static void main(String[] args) {
+        int[] height = {0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};
+        System.out.println(new Code42().trap(height));
+    }
 
     public int trap(int[] height) {
         int[] left = new int[height.length];

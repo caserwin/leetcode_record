@@ -5,6 +5,7 @@ import java.util.LinkedList;
 
 /**
  * @author yidxue
+ * 和前缀和 《code560-和为k的子数组个数》类似，都要通过公式变换求解。
  */
 public class Code494 {
 

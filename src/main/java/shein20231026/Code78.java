@@ -9,7 +9,7 @@ import java.util.List;
  * Date: 2023/10/31 23:56
  * Description:
  */
-public class Code78_half {
+public class Code78 {
     public List<List<Integer>> subsets(int[] nums) {
         //
         List<List<Integer>> resLs = new ArrayList<>();

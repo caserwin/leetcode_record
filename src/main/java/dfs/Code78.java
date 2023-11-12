@@ -33,10 +33,9 @@ public class Code78 {
     public List<List<Integer>> subsets(int[] nums) {
         // 结果列表
         List<List<Integer>> res = new ArrayList<>();
-
         // 路径列表
         LinkedList<Integer> list = new LinkedList<>();
-
+        // 回溯
         dfs(nums, 0, list, res);
         return res;
     }

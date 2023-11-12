@@ -1,19 +1,13 @@
-package special.bs;
+package shein20231026;
 
 /**
- * 1. 联立33：所有不确定要不要取到等号的地方都取等号
- * 2. left 和 right 分别通过 mid + 1 或 mid - 1 更新
+ * User: caserwin
+ * Date: 2023/10/26 23:52
+ * Description:
  */
 public class Code704 {
 
-    public static void main(String[] args) {
-        int[] arr = {5};
-        int target = -5;
-        System.out.println(search(arr, target));
-    }
-
-    public static int search(int[] nums, int target) {
-
+    public int search(int[] nums, int target) {
         int left = 0;
         int right = nums.length - 1;
 

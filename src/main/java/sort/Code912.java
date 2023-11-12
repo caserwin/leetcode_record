@@ -10,8 +10,9 @@ package sort;
 public class Code912 {
 
     public static void main(String[] args) {
-        int[] nums = {29, 10, 50, 34, 26, 25, 51, 30, 35, 50, 65, 21, 35, 14, 23, 26, 25, 37};
+//        int[] nums = {29, 10, 50, 34, 26, 25, 51, 30, 35, 50, 65, 21, 35, 14, 23, 26, 25, 37};
 //        int[] nums = {25, 8, 26, 25, 26};
+        int[] nums = {2, 2, 2, 2, 2, 2, 2, 2, 2};
         new Code912().sortArray(nums);
         for (int num : nums) {
             System.out.println(num);
@@ -27,7 +28,7 @@ public class Code912 {
      * 快排核心算法，递归实现
      */
     public void sort(int[] array, int left, int right) {
-        if (left > right) {
+        if (left >= right) {
             return;
         }
 

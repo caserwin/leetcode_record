@@ -18,7 +18,6 @@ public class Code3 {
             return 0;
         }
         char[] cs = s.toCharArray();
-        int left = 0;
         int right = 0;
 
         int maxLen = Integer.MIN_VALUE;
@@ -27,18 +26,10 @@ public class Code3 {
             // 一直 add，到条件不满足为止
             if (!linkedList.contains(cs[right])) {
                 linkedList.add(cs[right]);
-                maxLen = Math.max(maxLen, right - left + 1);
+                maxLen = Math.max(maxLen, linkedList.size());
                 right++;
             } else {
-                // 出现重复的字符，把最左边的移除
-                while (left < right) {
-                    linkedList.removeFirst();
-                    left++;
-                    if (!linkedList.contains(cs[right])) {
-                        maxLen = Math.max(maxLen, right - left + 1);
-                        break;
-                    }
-                }
+                linkedList.removeFirst();
             }
         }
         return maxLen;
